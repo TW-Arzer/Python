@@ -1,19 +1,15 @@
 import sys
 
-x = sys.argv[1:]
-read_doc = []
+r = sys.argv[1:]
+for i in r:
+    file_str = str(i)
 
 try:
-	for i in x:
-		with open(i, "r") as open_doc:
-			read_doc = open_doc.readlines()
-except FileNotFoundError as e:
-	print("Please check the path of your file")
+    f = open(file_str, "r")
+except TypeError as e:
+    print("Don't use <")
 else:
-	new = " ".join(read_doc)
-	print(new)
-			
-		
-#####nonig fertig, muess zerst testet werde
-
+    new = f.readlines()
+    new1 = "".join(new)
+    print(new1)
 
